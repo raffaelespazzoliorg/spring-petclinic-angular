@@ -6,7 +6,7 @@ const { SpecReporter } = require("jasmine-spec-reporter");
 exports.config = {
   allScriptsTimeout: 11000,
   // specs: ["./e2e/**/*.e2e-spec.ts"],
-  specs: ["features/**/*.feature"],
+  specs: ["cucumber/**/*.feature"],
   baseUrl: "http://localhost:4200/",
   capabilities: {
     browserName: "chrome",
@@ -26,7 +26,7 @@ exports.config = {
   // },
   onPrepare() {
     require("ts-node").register({
-      project: "features/tsconfig.cucumber.json",
+      project: "cucumber/tsconfig.cucumber.json",
     });
     // jasmine
     //   .getEnv()
