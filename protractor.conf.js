@@ -6,6 +6,8 @@ exports.config = {
   // specs: ["./e2e/**/*.e2e-spec.ts"],
   specs: ["features/**/*.feature"],
   baseUrl: "http://localhost:4200/",
+  // highlightDelay: 1000,
+  // directConnect: true,
   multiCapabilities: [
     {
       browserName: "firefox",
@@ -19,14 +21,17 @@ exports.config = {
     {
       browserName: "chrome",
       maxInstances: 1,
+
       chromeOptions: {
         args: [
-          "--headless",
+          /** TO SEE TESTS RUN, COMMENT --headless */
+          // "--headless",
           "--no-sandbox",
           "--disable-dev-shm-usage",
           "--disable-browser-side-navigation",
           "--disable-setuid-sandbox",
           "--disable-gpu",
+          "--window-size=1920x1080",
           "--ignore-certificate-errors",
           "--ignore-ssl-errors",
           "--disable-infobars=true",
